@@ -42,7 +42,49 @@ postData = (req, res) => {
 
   }
 
+helloWorld = (req, res) => {
+
+    res.send('Hello Word');
+
+}
+
+postDataTwo = (req, res) => {
+    
+    const newData = {
+
+        humidity : req.params.humidity,
+        temperature : req.params.temperature,
+        createdAt: new Date().toISOString()
+
+    }
+
+    db.collection('liveWeatherData')
+        .add(newData)
+        .then((doc) => {
+            const resData = {
+                dataId : doc.id
+            };
+
+            res.json(resData);
+     
+        })
+        .catch((err) => {
+            res.status(500).json({error: 'something went wrong'});
+            console.error(err);
+        });
+
+  }
+
+
+
+
+
+app.get('/datatwo/:temperature/:humidity', postDataTwo);
 app.post('/data', postData);
+app.get('/hello', helloWorld);
+
+
+
 
 module.exports = {
     app
