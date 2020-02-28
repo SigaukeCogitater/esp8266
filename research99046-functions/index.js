@@ -21,7 +21,7 @@ postData = (req, res) => {
 
         humidity : req.body.humidity,
         temperature : req.body.temperature,
-        createdAt: new Date().toISOString()
+        createdAt: new Date().toDateString
 
     }
 
@@ -54,7 +54,7 @@ postDataTwo = (req, res) => {
 
         humidity : req.params.humidity,
         temperature : req.params.temperature,
-        createdAt: new Date().toISOString()
+        createdAt: new Date().toDateString
 
     }
 
