@@ -72,7 +72,8 @@ const int httpsPort = 443;
 
 // Use web browser to view and copy
 // SHA1 fingerprint of the certificate
-const char fingerprint[] PROGMEM = "F9 18 2D DE 02 D3 4C 50 93 CA 76 9A 1A C8 7B E5 ED 5F 50 F5";
+const char fingerprint[] PROGMEM = "05 8B 82 BC FE B3 F4 3A FA 4F 77 45 D2 D0 48 E3 6E 29 BD CE";
+
 
 //
 // Create AsyncWebServer object on port 80
